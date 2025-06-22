@@ -69,6 +69,7 @@ exports.updateMe = async (req, res, next) =>{
     new: true,
     runValidators: true
   })
+   
 }
   exports.deleteMe = catchAsync(async (req,res,next) => {
     await User.findByIdAndUpdate(req.user.id, {active: false})

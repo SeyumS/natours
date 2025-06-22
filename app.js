@@ -15,7 +15,7 @@ const globalErrorHandler = require('./controllers/errorController')
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
 const reviewRouter = require('./routes/reviewRoutes');
-const bookingsRouter = require('./routes/bookingsRoutes');
+const bookingsRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes.js')
 
 // Start express app
@@ -76,8 +76,8 @@ app.use((req, res, next) => {
 app.use('/', viewRouter);
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
-app.use('api/v1/reviews', reviewRouter);
-app.use('api/v1/bokkings', bookingsRouter)
+app.use('/api/v1/reviews', reviewRouter);
+app.use('/api/v1/bookings', bookingsRouter)
 
 /*app.all('*', (req, res, next)=>{
   /*res.status(404).json({
